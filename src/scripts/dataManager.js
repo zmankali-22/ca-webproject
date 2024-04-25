@@ -32,11 +32,17 @@ function getStoredPageTheme() {
 }
 
 
+
 //  Create/update localstorage
 
 function setCssThemeToStorage() {
     let dataAsJsonString = JSON.stringify(cssThemes)
     localStorage.setItem("cssThemes", dataAsJsonString)
 }
+
+function setPageThemeToStorage() {
+    localStorage.setItem("pageTheme", pageTheme)
+}
+
 
 //  Delete localstorage
