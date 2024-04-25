@@ -1,24 +1,19 @@
-
-
 // Declare JS data that we cwant to store
 
-let cssThemes = [
+let cssThemes = [];
 
-]
-
-let pageTheme = "dark"
-
+let pageTheme = "dark";
 
 /**
  * Retrieve, assign and return the latest stored css theme  list from the browser localStorage
  * @returns Array of objects
  */
 function getStoredCssTheme() {
-    // update the csstheme array
-    let rawJsonStringCssThemes = localStorage.getItem('cssThemes');
-    cssThemes = JSON.parse(rawJsonStringCssThemes);
-    //  return the update data
-    return cssThemes
+  // update the csstheme array
+  let rawJsonStringCssThemes = localStorage.getItem("cssThemes");
+  cssThemes = JSON.parse(rawJsonStringCssThemes);
+  //  return the update data
+  return cssThemes;
 }
 
 /**
@@ -27,22 +22,34 @@ function getStoredCssTheme() {
  */
 
 function getStoredPageTheme() {
-    pageTheme = localStorage.getItem("pageTheme")
-    return pageTheme
+  pageTheme = localStorage.getItem("pageTheme");
+  return pageTheme;
 }
-
-
 
 //  Create/update localstorage
 
 function setCssThemeToStorage() {
-    let dataAsJsonString = JSON.stringify(cssThemes)
-    localStorage.setItem("cssThemes", dataAsJsonString)
+  let dataAsJsonString = JSON.stringify(cssThemes);
+  localStorage.setItem("cssThemes", dataAsJsonString);
 }
 
 function setPageThemeToStorage() {
-    localStorage.setItem("pageTheme", pageTheme)
+  localStorage.setItem("pageTheme", pageTheme);
 }
 
+//  check if data exists
+//  if it does, retrive it
+//  else set default variable to localStorage
+
+if (
+  localStorage.getItem("pageTheme") &&
+  localStorage.getItem("cssThemes").length > 0
+) {
+  getStoredCssTheme();
+  getStoredPageTheme();
+} else {
+  setCssThemeToStorage();
+  setPageThemeToStorage();
+}
 
 //  Delete localstorage
