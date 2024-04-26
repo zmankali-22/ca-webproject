@@ -2,6 +2,11 @@
 
 # Features
 
+# Deployments
+
+- [GitgubPage](https://zmankali-22.github.io/ca-webproject/src/index.html)
+- [Netlify](https://local-storage-example.netlify.app/)
+
 1. Use local storage to persist CSS theme information
 2. Create css theme information to store
     - CSS theme is array of object
