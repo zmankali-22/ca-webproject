@@ -1,4 +1,28 @@
 body {
-  background-color: var(--theme-900);
-  color: var(--theme-50)
+  background: linear-gradient(to right,black, var(--theme-950));
+  color: var(--theme-50);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
 }
+
+/* mobile -first design */
+.row {
+  width: 100dvw;
+}
+
+.column {
+  width: 100%;
+  background-color: var(--theme-800);
+}
+
+.themeToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 5%;
+}
+
+/* media query for desktop */
